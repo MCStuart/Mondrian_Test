@@ -1,3 +1,5 @@
+/* Quality of Life Setup */
+
 *,
 *::before,
 *::after {
@@ -6,9 +8,7 @@
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-}
+/* 10x6 Grid Declaration */
 
 body {
   width: 100%;
@@ -16,14 +16,18 @@ body {
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: repeat(10, 1fr);
   grid-gap: 0;
-  margin: 0;
+  align-content: start;
 }
+
+/* Force 1:1 Grid Areas' Aspect */
 
 .square {
   border: 1px solid black;
   width: calc(100vw/10);
-  max-height: calc(100vw/10);
+  height: calc(100vw/10);
 }
+
+/* Horizontal Divisions */
 
 body>.square:nth-child(20n+2),
 body>.square:nth-child(20n+4),
@@ -41,6 +45,8 @@ body>.square:nth-child(20n+21) {
   row-gap: 1px;
   grid-auto-flow: row;
 }
+
+/* Vertical Divisions */
 
 body>.square:nth-child(20n+3),
 body>.square:nth-child(20n+5),
