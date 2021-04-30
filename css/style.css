@@ -23,7 +23,6 @@ body {
   border: 1px solid black;
   width: calc(100vw/10);
   max-height: calc(100vw/10);
-  z-index: 2;
 }
 
 body>.square:nth-child(20n+2),
@@ -36,41 +35,11 @@ body>.square:nth-child(20n+15),
 body>.square:nth-child(20n+17),
 body>.square:nth-child(20n+19),
 body>.square:nth-child(20n+21) {
+  background-color: black;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
-  grid-template-areas: 
-    "upper"
-    "lower";
-}
-
-body>.square:nth-child(20n+2) #first,
-body>.square:nth-child(20n+4) #first,
-body>.square:nth-child(20n+6) #first,
-body>.square:nth-child(20n+8) #first,
-body>.square:nth-child(20n+10) #first,
-body>.square:nth-child(20n+13) #first,
-body>.square:nth-child(20n+15) #first,
-body>.square:nth-child(20n+17) #first,
-body>.square:nth-child(20n+19) #first,
-body>.square:nth-child(20n+21) #first {
-  grid-area: upper;
-  background-color: yellow;
-  z-index: -1;
-}
-
-body>.square:nth-child(20n+2) #second,
-body>.square:nth-child(20n+4) #second,
-body>.square:nth-child(20n+6) #second,
-body>.square:nth-child(20n+8) #second,
-body>.square:nth-child(20n+10) #second,
-body>.square:nth-child(20n+13) #second,
-body>.square:nth-child(20n+15) #second,
-body>.square:nth-child(20n+17) #second,
-body>.square:nth-child(20n+19) #second,
-body>.square:nth-child(20n+21) #second {
-  grid-area: lower;
-  background-color: green;
-  z-index: -1;
+  row-gap: 1px;
+  grid-auto-flow: row;
 }
 
 body>.square:nth-child(20n+3),
@@ -83,40 +52,67 @@ body>.square:nth-child(20n+14),
 body>.square:nth-child(20n+16),
 body>.square:nth-child(20n+18),
 body>.square:nth-child(20n+20) {
-  background-color: blue;
+  background-color: black;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-areas:
-    "left right";
+  column-gap: 1px;
+  grid-auto-flow: column;
 }
 
-body>.square:nth-child(20n+3) #first,
-body>.square:nth-child(20n+5) #first,
-body>.square:nth-child(20n+7) #first,
-body>.square:nth-child(20n+9) #first,
-body>.square:nth-child(20n+11) #first,
-body>.square:nth-child(20n+12) #first,
-body>.square:nth-child(20n+14) #first,
-body>.square:nth-child(20n+16) #first,
-body>.square:nth-child(20n+18) #first,
-body>.square:nth-child(20n+20) #first {
-  grid-area: left;
+/* Color Combinations */
+
+/* W/W */
+.colorCombination1 .rectangle#first {
+  background-color: white;
+}
+.colorCombination1 .rectangle#second {
+  background-color: white;
+}
+
+/* W/R */
+.colorCombination2 .rectangle#first {
+  background-color: white;
+}
+.colorCombination2 .rectangle#second {
   background-color: red;
-  z-index: -1;
 }
 
+/* R/W */
+.colorCombination3 .rectangle#first {
+  background-color: red;
+}
+.colorCombination3 .rectangle#second {
+  background-color: white;
+}
 
-body>.square:nth-child(20n+3) #second,
-body>.square:nth-child(20n+5) #second,
-body>.square:nth-child(20n+7) #second,
-body>.square:nth-child(20n+9) #second,
-body>.square:nth-child(20n+11) #second,
-body>.square:nth-child(20n+12) #second,
-body>.square:nth-child(20n+14) #second,
-body>.square:nth-child(20n+16) #second,
-body>.square:nth-child(20n+18) #second,
-body>.square:nth-child(20n+20) #second {
-  grid-area: right;
-  background-color: black;
-  z-index: -1;
+/* W/B */
+.colorCombination4 .rectangle#first {
+  background-color: white;
+}
+.colorCombination4 .rectangle#second {
+  background-color: blue;
+}
+
+/* B/W */
+.colorCombination5 .rectangle#first {
+  background-color: blue;
+}
+.colorCombination5 .rectangle#second {
+  background-color: white;
+}
+
+/* W/Y */
+.colorCombination6 .rectangle#first {
+  background-color: white;
+}
+.colorCombination6 .rectangle#second {
+  background-color: yellow;
+}
+
+/* Y/W */
+.colorCombination7 .rectangle#first {
+  background-color: yellow;
+}
+.colorCombination7 .rectangle#second {
+  background-color: white;
 }
