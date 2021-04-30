@@ -1,9 +1,9 @@
 let divBuilder = (i) => {
   let square = document.createElement('div');
 
-  square.className = 'square';
+  square.className = `square colorCombination${Math.floor(Math.random()*10)}`;
 
-  square.id = i;
+  square.id = `s${i}`;
 
   document.getElementById('squares').appendChild(square);
 }
@@ -17,9 +17,9 @@ let childDivBuilder = (i) => {
 
   rectangle2.className = 'rectangle';
   rectangle2.id = 'second';
-
-  document.getElementById(i + 1).appendChild(rectangle1);
-  document.getElementById(i + 1).appendChild(rectangle2);
+  
+  document.getElementById(`s${i + 1}`).appendChild(rectangle1);
+  document.getElementById(`s${i + 1}`).appendChild(rectangle2);
 }
 
 for(i=0;i<60;i++) {
@@ -27,5 +27,15 @@ for(i=0;i<60;i++) {
   childDivBuilder(i)
 }
 
+document.addEventListener('click', function ( e ) {
+  
+  let elementId = e.target.parentNode.id
+  console.log(e.target.parentNode.id);
+
+  let currentColorCombo = e.target.parentNode.classList[1];
+  console.log(currentColorCombo)
+
+  document.querySelector(`#${elementId}`).classList.replace(currentColorCombo, `colorCombination${Math.floor(Math.random()*10)}`)
+});
 
 
